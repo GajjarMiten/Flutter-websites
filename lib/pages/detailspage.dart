@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pokedex/model/character.dart';
 import 'package:pokedex/style.dart';
+import 'package:pokedex/widgets/header.dart';
 import 'package:pokedex/widgets/slideAnimatedWidget.dart';
 
 class DetailsPage extends StatefulWidget {
@@ -17,11 +18,20 @@ class _DetailsPageState extends State<DetailsPage> {
     return Material(
       child: Stack(
         children: [
+          Padding(
+            padding: const EdgeInsets.only(top: 32.0),
+            child: Hero(
+              tag: "header",
+              child: Header(),
+            ),
+          ),
           Align(
             alignment: Alignment.centerLeft,
             child: Padding(
               padding: const EdgeInsets.only(left: 24.0),
               child: SlideAnimation(
+                begin: Offset(0, -0.5),
+                end: Offset(0, 0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -133,9 +143,35 @@ class _DetailsPageState extends State<DetailsPage> {
                               ),
                             ),
                             Text("Clips", style: headeings),
+                            SizedBox(
+                              height: 15,
+                            ),
                             SingleChildScrollView(
+                              scrollDirection: Axis.horizontal,
                               child: Row(
-                                children: [],
+                                children: widget.character.clips.map((clip) {
+                                  return Padding(
+                                    padding: const EdgeInsets.only(right: 20.0),
+                                    child: SlideAnimation(
+                                      begin: Offset(5, 0),
+                                      end: Offset(0, 0),
+                                      child: Container(
+                                        height: 130,
+                                        width: 210,
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(20),
+                                          image: DecorationImage(
+                                            fit: BoxFit.fill,
+                                            image: Image.asset(
+                                                    "assets/clips/$clip")
+                                                .image,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  );
+                                }).toList(),
                               ),
                             ),
                           ],
@@ -148,7 +184,7 @@ class _DetailsPageState extends State<DetailsPage> {
             ),
           ),
           Align(
-            alignment: Alignment(0, -0.75),
+            alignment: Alignment(0, -0.65),
             child: GestureDetector(
               onTap: () {
                 Navigator.of(context).pop();
@@ -165,7 +201,7 @@ class _DetailsPageState extends State<DetailsPage> {
                     style: subTitle,
                   ),
                   SizedBox(
-                    width: 32,
+                    width: 38,
                   ),
                 ],
               ),

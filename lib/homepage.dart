@@ -18,13 +18,16 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.only(top: 32.0,bottom: 16.0),
+        padding: const EdgeInsets.only(top: 32.0, bottom: 16.0),
         child: Stack(
           children: [
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Header(),
+                Hero(
+                  tag: "header",
+                  child: Header(),
+                ),
                 Footer(),
               ],
             ),

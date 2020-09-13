@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 
 class SlideAnimation extends StatefulWidget {
   final Widget child;
+  final Offset begin;
+  final Offset end;
+  final int waitTime;
 
-  SlideAnimation({this.child});
+  SlideAnimation({this.child, this.begin, this.end, this.waitTime});
 
   @override
   _SlideAnimationState createState() => _SlideAnimationState();
@@ -18,10 +21,12 @@ class _SlideAnimationState extends State<SlideAnimation>
   @override
   void initState() {
     super.initState();
-    controller =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 1200));
-    animation = CurvedAnimation(parent: controller, curve: Curves.fastLinearToSlowEaseIn);
-    tween = Tween<Offset>(begin: Offset(0, -0.5), end: Offset(0, 0));
+    controller = AnimationController(
+        vsync: this,
+        duration: Duration(milliseconds: (widget.waitTime ?? 1) * 1200));
+    animation = CurvedAnimation(
+        parent: controller, curve: Curves.fastLinearToSlowEaseIn);
+    tween = Tween<Offset>(begin: widget.begin, end: widget.end);
     controller.forward();
   }
 

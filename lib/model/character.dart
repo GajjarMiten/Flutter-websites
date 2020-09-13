@@ -37,7 +37,13 @@ const Character dexter = Character(
       Color(0xffF2C94C),
     ],
     boxHeight: 180,
-    clips: []);
+    clips: [
+      'd1.jpg',
+      'd2.jpg',
+      'd3.jpg',
+      'd4.png',
+      'd5.jpg',
+    ]);
 
 const Character blossom = Character(
   name: "Blossom",
@@ -52,7 +58,10 @@ const Character blossom = Character(
     Color(0xfff83600),
   ],
   boxHeight: 150,
-  clips: [],
+  clips: [
+    'p1.png',
+    'p2.jpg',
+  ],
 );
 
 const Character gumball = Character(
@@ -69,7 +78,11 @@ const Character gumball = Character(
     Color(0xff0072ff),
   ],
   boxHeight: 210,
-  clips: [],
+  clips: [
+    'g1.png',
+    'g2.png',
+    'g3.jpg',
+  ],
 );
 
 const Character grim = Character(
@@ -85,7 +98,11 @@ const Character grim = Character(
     Color(0xffe65245),
   ],
   boxHeight: 180,
-  clips: [],
+  clips: [
+    'b1.jpeg',
+    'b2.jpeg',
+    'b3.jpeg',
+  ],
 );
 
 final List<Character> allCharacters = [dexter, blossom, gumball, grim];
