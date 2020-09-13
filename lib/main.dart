@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:pokedex/provider/scrollProvider.dart';
+import 'package:provider/provider.dart';
 
 import 'homepage.dart';
 
@@ -8,9 +10,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Material App',
+      title: 'Cartoon Network',
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: MultiProvider(
+        providers: [ChangeNotifierProvider(create: (_) => ScrollProvider())],
+        child: HomePage(),
+      ),
     );
   }
 }

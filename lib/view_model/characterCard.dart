@@ -51,7 +51,9 @@ class _CharacterCardState extends State<CharacterCard> {
             imageAlignment = widget.character.imageAlignment;
           });
         },
-        child: GestureDetector(
+        child: InkWell(
+          borderRadius: BorderRadius.circular(20),
+          splashColor: Colors.transparent,
           onTap: () {
             Navigator.of(context).push(
               MaterialPageRoute(
@@ -61,8 +63,8 @@ class _CharacterCardState extends State<CharacterCard> {
           },
           child: SlideAnimation(
             waitTime: 3,
-            begin: Offset(1,0),
-            end: Offset(0,0),
+            begin: Offset(1, 0),
+            end: Offset(0, 0),
             child: Container(
               height: 300,
               width: 230,

@@ -185,38 +185,44 @@ class _DetailsPageState extends State<DetailsPage> {
           ),
           Align(
             alignment: Alignment(0, -0.65),
-            child: GestureDetector(
-              onTap: () {
-                Navigator.of(context).pop();
-              },
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Icon(Icons.close),
-                  SizedBox(
-                    width: 10,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                InkWell(
+                  borderRadius: BorderRadius.circular(20),
+                  onTap: () => Navigator.of(context).pop(),
+                  child: Row(
+                    children: [
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Icon(Icons.close),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        "Close",
+                        style: subTitle,
+                      ),
+                      SizedBox(
+                        width: 38,
+                      ),
+                    ],
                   ),
-                  Text(
-                    "Close",
-                    style: subTitle,
-                  ),
-                  SizedBox(
-                    width: 38,
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
           Hero(
             tag: widget.character.image,
             child: AnimatedAlign(
               duration: Duration(milliseconds: 300),
-              alignment: Alignment(-0.5, 0),
+              alignment: Alignment(-0.6, 0),
               child: Image.asset(
                 widget.character.image,
                 scale: (widget.character.imageScale - 2 > 0)
                     ? widget.character.imageScale - 1.0
-                    : widget.character.imageScale - 0.8,
+                    : widget.character.imageScale - 0.2,
               ),
             ),
           ),

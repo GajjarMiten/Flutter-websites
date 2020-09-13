@@ -16,23 +16,28 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.only(top: 32.0, bottom: 16.0),
-        child: Stack(
-          children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Hero(
-                  tag: "header",
-                  child: Header(),
-                ),
-                Footer(),
-              ],
-            ),
-            BodyPage(),
-          ],
+    return MouseRegion(
+      onEnter: (event) {
+        setState(() {});
+      },
+      child: Scaffold(
+        body: Padding(
+          padding: const EdgeInsets.only(top: 32.0, bottom: 16.0),
+          child: Stack(
+            children: [
+              BodyPage(),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Hero(
+                    tag: "header",
+                    child: Header(),
+                  ),
+                  Footer(),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

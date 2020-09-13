@@ -105,4 +105,51 @@ const Character grim = Character(
   ],
 );
 
-final List<Character> allCharacters = [dexter, blossom, gumball, grim];
+const Character johny = Character(
+  name: "Johny",
+  showName: "Johnny Bravo",
+  image: "assets/johny.png",
+  imageScale: 1.5,
+  imageAlignment: Alignment(0, -2),
+  description:
+      "Johnny Bravo is an American animated television series created by Van Partible for Cartoon Network, and the second of the network's Cartoon Cartoons, which aired from July 14, 1997, to August 27, 2004. The series centers on the title character, who is loosely based on Elvis Presley. Johnny Bravo is a sunglasses-wearing, muscular young man who lives with his mother and attempts to get women to date him, though he is usually unsuccessful.",
+  background: [
+    Color(0xff8E2DE2),
+    Color(0xff4A00E0),
+  ],
+  boxHeight: 200,
+  clips: [
+    'j2.jpeg',
+    'j1.jpeg',
+    'j3.jpeg',
+  ],
+);
+
+const Character bean = Character(
+  name: "Mr.Bean",
+  showName: "Mr.Bean ",
+  image: "assets/mr.bean.png",
+  imageScale: 2.3,
+  imageAlignment: Alignment(0, -3),
+  description:
+      "Mr. Bean is a British sitcom created by Rowan Atkinson and Richard Curtis, produced by Tiger Aspect and starring Atkinson as the title character. The sitcom consisted of 15 episodes that were co-written by Atkinson alongside Curtis and Robin Driscoll; for the pilot, it was co-written by Ben Elton.",
+  background: [
+    Color(0xff6D6027),
+    Color(0xffD3CBB8),
+  ],
+  boxHeight: 210,
+  clips: [
+    'm1.jpeg',
+    'm2.jpeg',
+    'm3.jpeg',
+    'm4.jpeg',
+  ],
+);
+final List<Character> allCharacters = [
+  dexter,
+  blossom,
+  gumball,
+  grim,
+  johny,
+  bean
+];
